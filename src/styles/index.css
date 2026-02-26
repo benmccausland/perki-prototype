@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    background: #DDDDD9;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  /* iOS-style momentum scroll — hides scrollbar */
+  .ios-scroll {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+  .ios-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Frosted glass — tab bar, sheets */
+  .glass {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* Subtle press feedback on interactive elements */
+  .pressable {
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .pressable:active {
+    opacity: 0.55;
+    transform: scale(0.97);
+  }
+}
